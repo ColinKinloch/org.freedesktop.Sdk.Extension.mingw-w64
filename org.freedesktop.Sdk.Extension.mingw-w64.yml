@@ -1,11 +1,10 @@
 id: org.freedesktop.Sdk.Extension.mingw-w64
-branch: '23.08'
+branch: '24.08'
 build-extension: true
 sdk: org.freedesktop.Sdk
 runtime: org.freedesktop.Sdk
-runtime-version: '23.08'
+runtime-version: '24.08'
 separate-locales: false
-appstream-compose: false
 sdk-extensions: []
 build-options:
   prefix: /usr/lib/sdk/mingw-w64
@@ -285,8 +284,6 @@ modules:
     buildsystem: simple
     build-commands:
       - install -Dm644 ${FLATPAK_ID}.metainfo.xml -t ${FLATPAK_DEST}/share/metainfo
-      - appstream-compose --basename=${FLATPAK_ID} --prefix=${FLATPAK_DEST} --origin=flatpak
-        ${FLATPAK_ID}
     sources:
       - type: file
         path: org.freedesktop.Sdk.Extension.mingw-w64.metainfo.xml
